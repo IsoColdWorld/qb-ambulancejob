@@ -102,9 +102,9 @@ CreateThread(function()
 		local player = PlayerId()
 		if NetworkIsPlayerActive(player) then
             local playerPed = PlayerPedId()
-            if IsEntityDead(playerPed) and not InLaststand then
-                SetLaststand(true)
-            elseif IsEntityDead(playerPed) and InLaststand and not isDead then
+--[[             if IsEntityDead(playerPed) and not InLaststand then
+                SetLaststand(true) ]]
+            if IsEntityDead(playerPed)--[[ and InLaststand ]] and not isDead then
                 SetLaststand(false)
                 local killer_2, killerWeapon = NetworkGetEntityKillerOfPlayer(player)
                 local killer = GetPedSourceOfDeath(playerPed)
