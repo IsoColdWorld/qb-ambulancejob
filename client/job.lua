@@ -222,6 +222,7 @@ RegisterNetEvent('hospital:client:RevivePlayer', function()
                     StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
                     QBCore.Functions.Notify(Lang:t('success.revived'), 'success')
                     TriggerServerEvent("hospital:server:RevivePlayer", playerId)
+                    local succesChance = math.random(1, 20)
                 end, function() -- Cancel
                     isHealingPerson = false
                     StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
